@@ -1,0 +1,68 @@
+<%-include ../public/header%>
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+<!--<![endif]-->
+
+
+<%-include ../public/navbar%>
+
+<%-include ../public/nav%>
+
+
+<div class="content">
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+         这是用户意见列表<br/>
+            <a href="<%=host%>admin/advise/add">添加用户意见</a><br/>
+
+            <table width="1000" border="1" cellpadding="0" cellspacing="0" align="center">
+                <tr>
+                    <th>标题</th>
+                    <th>用户</th>
+                    <th>内容</th>
+                    <th>添加时间</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                <%for(var i=0;i<list.length;i++) {%>
+                    <tr align="center">
+                        <td><%=list[i].title%></td>
+                        <td><%=list[i].username%></td>
+                        <td><%=list[i].content%></td>
+                        <td><%=list[i].add_time%></td>
+                        <td><%=list[i].status%></td>
+                        <td><a href="<%-host%>admin/advise/edit?id=<%=list[i]._id%>">修改</a>
+                            <a href="<%-host%>admin/advise/delete?id=<%=list[i]._id%>">删除</a>
+                        </td>
+                    </tr>
+                <%}%>
+            </table>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="<%=host%>lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $("[rel=tooltip]").tooltip();
+    $(function() {
+        $('.demo-cancel-click').click(function(){return false;});
+    });
+</script>
+
+</body>
+</html>
+
+

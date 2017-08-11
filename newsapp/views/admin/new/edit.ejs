@@ -1,0 +1,68 @@
+<%-include ../public/header%>
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+<!--<![endif]-->
+
+
+<%-include ../public/navbar%>
+
+<%-include ../public/nav%>
+
+
+<div class="content">
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+         这是新闻修改页面<br/>
+
+            <form action="<%=host%>admin/news/doedit" enctype="multipart/form-data" method="post">
+                <%for(var i=0;i<list.length;i++) {%>
+                    <label>
+                        <input type="hidden" name="_id" value="<%=list[i]._id%>"/>
+                    </label>
+                    <label>
+                        类型
+                        <input type="radio" name="cate_id" value="1" <%if(list[i].cate_id=='1'){%>checked<%}%> />体育新闻
+                        <input type="radio" name="cate_id" value="2" <%if(list[i].cate_id=='2'){%>checked<%}%> />国际新闻
+                        <input type="radio" name="cate_id" value="3" <%if(list[i].cate_id=='3'){%>checked<%}%> />国内新闻
+                        <input type="radio" name="cate_id" value="4" <%if(list[i].cate_id=='4'){%>checked<%}%> />娱乐新闻
+                        <input type="radio" name="cate_id" value="5" <%if(list[i].cate_id=='5'){%>checked<%}%> />其他新闻
+                    </label><br/>
+                    <label>
+                        <input type="text" name="title" value="<%=list[i].title%>"/>
+                    </label>
+                    <label>
+                        <input type="text" name="author" value="<%=list[i].author%>"/>
+                    </label>
+                    <label>
+                        <input type="text" name="content" value="<%=list[i].content%>"/>
+                    </label>
+                    <label>
+                        <input type="file" name="img" multiple="multiple" value="<%=list[i].img%>"/>
+                        <img src="<%=host%>admin/news/<%=list[i].img%>" alt="">
+                    </label>
+                <input type="submit"/>
+                <%}%>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="<%=host%>lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $("[rel=tooltip]").tooltip();
+    $(function() {
+        $('.demo-cancel-click').click(function(){return false;});
+//    });
+</script>
+
+</body>
+</html>
+
+

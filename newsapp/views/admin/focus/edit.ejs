@@ -1,0 +1,93 @@
+<%-include ../public/header%>
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+<!--<![endif]-->
+
+
+<%-include ../public/navbar%>
+
+<%-include ../public/nav%>
+
+
+<div class="content">
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+            <h3>编辑轮播图</h3>
+            <!--<form action="<%=host%>admin/focus/edit/doedit" method="post">-->
+                <!--<input type="hidden" name="id" value="<%=list[0]._id%>"/>-->
+                <!--<label>轮播图类　　：<input name="cate_id" type="text" value="<%=list[0].cate_id%>"/></label><br>-->
+                <!--<label>标题　　　　：<input name="title" type="text" value="<%=list[0].title%>"/></label><br>-->
+                <!--<label>图片　　　　：<input name="img" type="text" value="<%=list[0].img%>"/></label><br>-->
+                <!--<label>描述　　　　：<input name="description" type="text" value="<%=list[0].description%>"/></label><br>-->
+                <!--<label>路径　　　　：<input name="url" type="text" value="<%=list[0].url%>"/></label><br>-->
+                <!--<label>添加时间　　：<input name="add_time" type="text"  value="<%=list[0].add_time%>"/></label><br>-->
+                <!--<input type="submit" value="提交"/>-->
+            <!--</form>-->
+            <form action="<%=host%>admin/focus/edit/doedit" enctype="multipart/form-data" method="post">
+                <input type="hidden" name="id" value="<%=list[0]._id%>"/>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">轮播图类</label>
+                    <select id="select_group" name="cate_id" value="<%=list[0].cate_id%>">
+                        <option value="1">1体育</option>
+                        <option value="2">2英语</option>
+                        <option value="3" >3语文</option>
+                        <option value="4">4数学</option>
+                    </select>
+                    <!--<input value="<%=list[0].cate_id%>"  name="cate_id" type="text" class="form-control" id="exampleInputEmail1" placeholder="轮播图类">-->
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">标题</label>
+                    <input value="<%=list[0].title%>" name="title" type="text" class="form-control" id="exampleInputPassword1" placeholder="标题">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">描述</label>
+                    <input value="<%=list[0].description%>" name="description" type="text" class="form-control" id="exampleInputPassword1" placeholder="描述">
+                </div>
+                <div class="form-group">
+                    <label  for="exampleInputPassword1">路径</label>
+                    <input value="<%=list[0].url%>" name="url" type="text" class="form-control" id="exampleInputPassword1" placeholder="路径">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">添加时间</label>
+                    <input value="<%=list[0].add_time%>" name="add_time" type="text" class="form-control" id="exampleInputPassword1" placeholder="添加时间">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputFile">图片</label>
+                    <input  name="img" type="file" multiple="multiple" id="exampleInputFile">
+                    <p class="help-block">Example block-level help text here.</p>
+                </div>
+
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="<%=host%>lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $("[rel=tooltip]").tooltip();
+    $(function() {
+        $('.demo-cancel-click').click(function(){return false;});
+    });
+    $(function(){
+        console.log($('#select_group option').eq(2));
+        $('#select_group option').eq(<%=list[0].cate_id%>)[0].setAttribute('selected',true)
+    })
+</script>
+
+</body>
+</html>
+
+

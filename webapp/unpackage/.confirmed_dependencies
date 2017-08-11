@@ -1,0 +1,92 @@
+{
+	"index.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"pages/advice/advice.html",
+			"pages/register/register.html",
+			"pages/login/login.html",
+			"css/index.css",
+			"fonts/mui.ttf",
+			"js/index.js",
+			"pages/collect/collect.html",
+			"js/index1.js"
+		],
+		"refer": [
+			"pages/advice/advice.html",
+			"pages/register/register.html",
+			"pages/login/login.html",
+			"pages/collect/collect.html",
+			"pages/newsdetail/newsdetail.html"
+		]
+	},
+	"pages/advice/advice.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"css/advise.css",
+			"js/advise.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"index.html",
+			"pages/login/login.html"
+		],
+		"refer": [
+			"index.html",
+			"pages/login/login.html"
+		]
+	},
+	"pages/register/register.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"js/register.js",
+			"css/register.css",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"index.html",
+			"pages/login/login.html"
+		],
+		"refer": [
+			"index.html",
+			"pages/login/login.html"
+		]
+	},
+	"pages/login/login.html": {
+		"resources": [
+			"css/login.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/login.js",
+			"index.html",
+			"pages/register/register.html",
+			"pages/advice/advice.html"
+		],
+		"refer": [
+			"index.html",
+			"pages/register/register.html",
+			"pages/advice/advice.html"
+		]
+	},
+	"pages/collect/collect.html": {
+		"resources": [
+			"index.html",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"index.html"
+		]
+	},
+	"pages/newsdetail/newsdetail.html": {
+		"resources": [
+			"css/newsdetailiconfont.css",
+			"css/newsdetail.css",
+			"font_newsdetail/iconfont.woff",
+			"js/mui.js",
+			"js/newsdetail.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	}
+}

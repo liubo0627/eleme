@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../../js/mui.min.js"></script>
+		
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link href="../../css/register.css" rel="stylesheet" />
+		<script type="text/javascript" charset="UTF-8">
+			mui.init();
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">返回</a>
+			<h1 class="mui-title">用户注册</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group" id="abc">
+				<div class="mui-input-row">
+
+					<input type="text" id="username" class="mui-input-clear" placeholder="请输账号">
+				</div>
+				<div class="mui-input-row">
+
+					<input type="password" id="password" class="mui-input-password" placeholder="请输入密码">
+				</div>
+				<div class="mui-input-row">
+
+					<input type="password" id="pass" class="mui-input-password" placeholder="请输入确认密码">
+				</div>
+				<label　style="margin-top: .1rem;">
+					性别:　
+					<input type="radio" name="sex" checked="checked" value="1" />男　
+					<input type="radio" name="sex" value="2" />女
+				</label>
+				<div class="mui-button-row">
+					<button type="button" id="btn" class="mui-btn mui-btn-primary">注册</button>
+
+				</div>
+			</form>
+		</div>
+	</body>
+
+</html>
+<script src="../../js/register.js"></script>

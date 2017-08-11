@@ -1,0 +1,90 @@
+<%-include ../public/header%>
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+<!--<![endif]-->
+
+
+<%-include ../public/navbar%>
+
+<%-include ../public/nav%>
+
+
+<div class="content">
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+            <h3>添加轮播图</h3>
+            <!--<form action="<%=host%>admin/focus/add/doadd" method="post">-->
+                <!--<label>轮播图类　　：<input name="cate_id" type="text"/></label><br>-->
+                <!--<label>标题　　　　：<input name="title" type="text"/></label><br>-->
+                <!--<label>图片　　　　：<input name="img" type="text"/></label><br>-->
+                <!--<label>描述　　　　：<input name="description" type="text"/></label><br>-->
+                <!--<label>路径　　　　：<input name="url" type="text"/></label><br>-->
+                <!--<label>添加时间　　：<input name="add_time" type="text" /></label><br>-->
+                <!--<input type="submit" value="提交"/>-->
+            <!--</form>-->
+            <form action="<%=host%>admin/focus/add/doadd" enctype="multipart/form-data" method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">轮播图类</label>
+                    <select name="cate_id">
+                        <option value="1">1体育</option>
+                        <option value="2">2英语</option>
+                        <option value="3">3语文</option>
+                        <option value="4">4数学</option>
+                    </select>
+                    <!--<input name="cate_id" type="text" class="form-control" id="exampleInputEmail1" placeholder="轮播图类">-->
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">标题</label>
+                    <input name="title" type="text" class="form-control" id="exampleInputPassword1" placeholder="标题">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">描述</label>
+                    <input name="description" type="text" class="form-control" id="exampleInputPassword1" placeholder="描述">
+                </div>
+                <div class="form-group">
+                    <label  for="exampleInputPassword1">路径</label>
+                    <input name="url" type="text" class="form-control" id="exampleInputPassword1" placeholder="路径">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">添加时间</label>
+                    <input name="add_time" type="text" class="form-control" id="exampleInputPassword1" placeholder="添加时间">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputFile">图片</label>
+                    <input name="img" type="file" multiple="multiple" id="exampleInputFile">
+
+                </div>
+                <!--<div class="checkbox">-->
+                    <!--<label>-->
+                        <!--<input type="checkbox"> Check me out-->
+                    <!--</label>-->
+                <!--</div>-->
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="<%=host%>lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $("[rel=tooltip]").tooltip();
+    $(function() {
+        $('.demo-cancel-click').click(function(){return false;});
+    });
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,59 @@
+<%-include ../public/header%>
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+<!--<![endif]-->
+
+
+<%-include ../public/navbar%>
+
+<%-include ../public/nav%>
+
+
+<div class="content">
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+         这是意见添加
+
+            <form action="<%=host%>admin/advise/doadd" method="post">
+                <label>
+                    标　　题 <input type="text" name="title" placeholder="标题">
+                </label><br/>
+                <label>
+                    用户名称 <input type="text" placeholder="用户名称" name="username"/>
+                </label><br/>
+                <label>
+                     内　　容<textarea rows="10" cols="20" name="content"></textarea>
+                </label><br/>
+                <label>
+                    是否处理 <input type="radio" value="已处理" name="status" />已处理
+                    <input type="radio" name="status" value="未处理" checked/>未处理
+                </label><br/>
+                <input type="submit" value="提交"/>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="<%=host%>lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $("[rel=tooltip]").tooltip();
+    $(function() {
+        $('.demo-cancel-click').click(function(){return false;});
+    });
+</script>
+
+</body>
+</html>
+
+

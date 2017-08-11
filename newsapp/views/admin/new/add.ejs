@@ -1,0 +1,80 @@
+<%-include ../public/header%>
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+<!--<![endif]-->
+
+
+<%-include ../public/navbar%>
+
+<%-include ../public/nav%>
+
+
+<div class="content">
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+         这是新闻添加
+
+            <form action="<%=host%>admin/news/doadd" enctype="multipart/form-data" method="post">
+                <label>
+                   类型
+                    <select name="cate_id">
+                        <option value="1">体育新闻</option>
+                        <option value="2">国际新闻</option>
+                        <option value="3">国内新闻</option>
+                        <option value="4">娱乐新闻</option>
+                        <option value="5">其他新闻</option>
+                    </select>
+                </label><br/>
+                <label>
+                    title <input type="text" placeholder="title" name="title"/>
+                </label><br/>
+                <label>
+                    作者 <input type="text" placeholder="新闻作者" name="author"/>
+                </label><br/>
+                <label>
+                     内容<textarea name="content" id="content" cols="200" rows="30"></textarea>
+                </label><br/>
+                <label>
+                    图片 <input type="file" name="img" multiple="multiple" placeholder="图片路径"/>
+                </label><br/>
+                <input type="submit" value="提交"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="<%=host%>xheditor-1.2.2/jquery/jquery-1.11.2.min.js" charset="utf-8"></script>
+<script src="<%=host%>xheditor-1.2.2/xheditor-1.2.2.min.js" charset="utf-8"></script>
+<script src="<%=host%>xheditor-1.2.2/xheditor_lang/zh-cn.js" charset="utf-8"></script>
+<script src="<%=host%>lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $("[rel=tooltip]").tooltip();
+    $(function() {
+        $('.demo-cancel-click').click(function(){return false;});
+    });
+
+    $('#content').xheditor({
+        html5Upload: false,
+        upMultiple: '3',
+        tools:'full',
+        skin:'default',
+        width:500, height:400,
+        upImgUrl:"<%=host%>admin/news/upload",
+        upImgExt:"jpg,jpeg,gif,png"
+    });
+
+</script>
+
+</body>
+</html>
+
+

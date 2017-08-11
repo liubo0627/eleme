@@ -1,0 +1,36 @@
+ body{
+    	background:#fff;
+    }
+    .nui-bar{
+    	position: relative;
+    }
+    	.mui-bar-nav{
+    		
+    		background: #007AFF;
+    		
+    	}
+    	.mui-bar .mui-title{
+    		color: #fff;	
+    		font-size: 22px;
+    	}
+    	.mui-bar-nav.mui-bar .mui-icon{
+    		color: #fff;	
+    		
+    	}
+    	.mui-bar.mui-bar-nav>a{
+    		color: #fff;
+    		font-size: 16px;
+    	}
+    	.forget-res{
+    		background:#fff;
+    		text-align: center;
+    	}
+    	span a{
+    		color: #000;
+    		padding: 10px;
+    	}
+    	.zc{
+    		position: absolute;
+    		top: 8px;
+    		right: 10px;
+    	}

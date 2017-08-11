@@ -1,0 +1,104 @@
+<%-include ../public/header%>
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+<!--<![endif]-->
+
+
+<%-include ../public/navbar%>
+
+<%-include ../public/nav%>
+
+
+<div class="content">
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+
+            <h1 style="text-align: center;margin-bottom: 50px">后台管理系统</h1>
+            <a href="<%=host%>admin/user/add" class="btnadd">添加</a>
+            <ul>
+                <table width="90%" cellspacing="0" border="1px solid #ccc" style="text-align: center">
+                    <th>姓名</th>
+                    <th>头像</th>
+                    <th>年龄</th>
+                    <th>性别</th>
+                    <th>密码</th>
+                    <th>增加时间</th>
+                    <th>操作</th>
+
+                    <%for(var i=0;i<list.length;i++){%>
+                    <tr>
+                        <td><%=list[i].username%></td>
+                        <td>
+                            <%if(list[i].face!=''&&list[i].face!=null){%>
+                            <img src="<%=list[i].face%>" width="40" height="40" alt="">
+                            <%}else{%>
+                            <%}%>
+                        </td>
+                        <td><%=list[i].age%></td>
+                        <td>
+                            <%if(list[i].sex=='1'){%>
+                            男
+                            <%}else{%>
+                            女
+                            <%}%>
+                        </td>
+                        <td>
+                            <%=list[i].password%>
+                        </td>
+                        <td>
+                            <%=list[i].add_time%>
+                        </td>
+                        <td>
+                            <a href="<%=host%>admin/user/edit?id=<%=list[i]._id%>">编辑</a>　　
+                            <a href="<%=host%>admin/user/delete?id=<%=list[i]._id%>">删除</a>
+                        </td>
+                    </tr>
+                    <%}%>
+
+
+                </table>
+            </ul>
+
+
+
+
+
+
+
+
+
+            <!--这是用户列表-->
+
+            <!--<ul>-->
+               <!--<%for(var i=0;i<list.length;i++) {%>-->
+
+                    <!--<li><%=list[i].username%>-&#45;&#45;&#45;&#45;<%=list[i].age%></li>-->
+                <!--<%}%>-->
+            <!--</ul>-->
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="<%=host%>lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $("[rel=tooltip]").tooltip();
+    $(function() {
+        $('.demo-cancel-click').click(function(){return false;});
+    });
+</script>
+
+</body>
+</html>
+
+

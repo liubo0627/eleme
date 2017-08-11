@@ -1,0 +1,51 @@
+html {
+	font-size: 625% !important;
+}
+
+body {
+	font-size: 0.16rem !important;
+}
+
+.mui-bar.mui-bar-nav {
+	background-color: #387ef5;
+	height: .44rem;
+	line-height: .44rem;
+}
+
+.mui-bar.mui-bar-nav h1 {
+	color: #fff;
+}
+
+.mui-bar.mui-bar-nav a {
+	color: #fff;
+}
+
+.mui-content {
+	width: 96%;
+	margin: 0 auto;
+}
+
+.mui-content #form {
+	margin-top: .2rem;
+}
+
+#form input {
+	border: 1px solid #ccc;
+}
+
+#form #btn {
+	background-color: #387ef5;
+	border: 0;
+	border-radius: .04rem;
+}
+
+#popover {
+	height: 100px;
+	width: 200px;
+}
+
+#gologin.mui-btn.mui-btn-blue.mui-btn-block{
+	margin: 2rem auto !important;
+	width: 80% !important;
+	
+}

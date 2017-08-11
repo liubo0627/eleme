@@ -1,0 +1,78 @@
+<%-include ../public/header%>
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+<!--<![endif]-->
+
+
+<%-include ../public/navbar%>
+
+<%-include ../public/nav%>
+<style>
+    tr,td,th{text-align:center}
+    .btn{ width:100px; height:30px;text-align:center;line-height:30px;display:block;
+    background:red;margin:5px 0;color:white}
+    img{ width:100px; height:100px; border-radius:50%}
+</style>
+
+<div class="content">
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+            <h3>轮播图列表</h3>
+            <a class="btn" href="<%=host%>admin/focus/add">增加轮播图</a>
+            <table width="1000" border="1" cellspacing="0" cellpadding="0" align="center">
+              <thead>
+                  <tr>
+
+                  <th>cate_id</th>
+                  <th>title</th>
+                  <th>img</th>
+                  <th>description</th>
+                  <th>url</th>
+                  <th>add_time</th>
+                  <th>修改</th>
+                  <th>操作</th>
+                  </tr>
+              </thead>
+
+                <%for(var i=0;i<list.length;i++) {%>
+
+                <tr>
+
+                    <td><%=list[i].cate_id%></td>
+                    <td><%=list[i].title%></td>
+                    <td><img src="<%=list[i].img%>" /></td>
+                    <td><%=list[i].description%></td>
+                    <td><%=list[i].url%></td>
+                    <td><%=list[i].add_time%></td>
+                    <td><a href="<%=host%>admin/focus/edit?id=<%=list[i]._id%>">修改</a></td>
+                    <td><a href="<%=host%>admin/focus/delete?id=<%=list[i]._id%>">删除</a></td>
+                </tr>
+                <%}%>
+            </table>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="<%=host%>lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $("[rel=tooltip]").tooltip();
+    $(function() {
+        $('.demo-cancel-click').click(function(){return false;});
+    });
+</script>
+
+</body>
+</html>
+
+

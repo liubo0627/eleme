@@ -1,0 +1,61 @@
+<%-include ../public/header%>
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+<!--<![endif]-->
+
+
+<%-include ../public/navbar%>
+
+<%-include ../public/nav%>
+
+
+<div class="content">
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+         <h2>添加收藏页面</h2>
+
+            <form action="<%=host%>admin/collect/doadd" method="post">
+                <label>
+                    新闻编号
+                    <select name="news_id">
+                        <%for(var j=0;j<news.length; j++){%>
+                        <option value="<%=news[j]._id%>"><%=news[j].title%></option>
+                        <%}%>
+                    </select>
+                </label><br/>
+                <label>
+                    用　　户
+                    <select name="user_id">
+                        <%for(var i=0;i<user.length; i++){%>
+                        <option value="<%=user[i]._id%>"><%=user[i].username%></option>
+                        <%}%>
+                    </select>
+                </label><br/>
+                <input type="submit" value="提交"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="<%=host%>lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $("[rel=tooltip]").tooltip();
+    $(function() {
+        $('.demo-cancel-click').click(function(){return false;});
+    });
+</script>
+
+</body>
+</html>
+
+

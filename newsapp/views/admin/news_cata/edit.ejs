@@ -1,0 +1,65 @@
+<%-include ../public/header%>
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+<!--<![endif]-->
+
+
+<%-include ../public/navbar%>
+
+<%-include ../public/nav%>
+
+
+<div class="content">
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+         <!--这是新闻列表的修改-->
+
+
+            <!--enctype="multipart/form-data"-->
+            <!--</table>-->
+            <form action="<%=host%>admin/news_cata/doEdit"  method="post">
+                <input type="hidden" name="id" value="<%=list[0]._id%>"/>
+                <p>
+                    类别编号: <input type="text" name="cate_id" value="<%=list[0].cate_id%>"/>
+                </p>
+                <p>
+                    名称　　: <input type="text" name="cate_name" value="<%=list[0].cate_name%>"/>
+                </p>
+                <p>
+                    时间　　: <input type="text" name="add_time" value="<%=list[0].add_time%>"/>
+                </p>
+
+                <p>
+                    状态　　: <input type="text" name="status" value="<%=list[0].status%>"/>
+                </p>
+
+                <p>
+                    <input type="submit" value="提交"/>
+                </p>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="<%=host%>lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $("[rel=tooltip]").tooltip();
+    $(function() {
+        $('.demo-cancel-click').click(function(){return false;});
+    });
+</script>
+
+</body>
+</html>
+
+

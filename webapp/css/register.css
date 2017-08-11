@@ -1,0 +1,18 @@
+html{
+	font-size: 625%;
+}
+		.mui-bar-nav{
+    		
+    		background: #007AFF;
+    	}
+    	.mui-bar .mui-title{
+    		color: #fff;	
+    		font-size: .22rem;
+    	}
+    	.mui-bar-nav.mui-bar .mui-icon{
+    		color: #fff;	
+    		
+    	}
+    	.mui-bar.mui-bar-nav>a{
+    		font-size: .16rem;
+    	}
